@@ -2,21 +2,17 @@ const alphaPos = new AlphaPos()
 
 const addDrinkButton = document.querySelector('[data-alpha-pos="add-drink"]')
 addDrinkButton.addEventListener('click', function () {
-  // 1. 取的店員選擇的飲料品項、甜度、冰塊選項內容
   const drinkName = alphaPos.getCheckedValue('drink')
   const ice = alphaPos.getCheckedValue('ice')
   const sugar = alphaPos.getCheckedValue('sugar')
 
-  // 2. 如果沒有選擇飲料品項，跳出提示
   if (!drinkName) {
     alert('Please choose at least one item.')
     return
   }
 
-  // 3. 建立飲料實例，並取得飲料價格
   const drink = new Drink(drinkName, ice, sugar)
 
-  // 4. 將飲料實例產生成左側訂單區的畫面
   alphaPos.addDrink(drink)
 })
 
@@ -32,14 +28,11 @@ orderLists.addEventListener('click', function (event) {
 
 const checkoutButton = document.querySelector('[data-alpha-pos="checkout"')
 checkoutButton.addEventListener('click', function () {
-  // 1. 計算訂單總金額
   alert(`Total amount of drinks：$${alphaPos.checkout()}`)
 
-  // 2. 清空訂單
   alphaPos.clearOrder(orderLists)
 })
 
-// Constructor function for Drinks
 function Drink(name, ice, sugar) {
   this.name = name
   this.ice = ice
@@ -64,7 +57,6 @@ Drink.prototype.price = function () {
   }
 }
 
-// Constructor function for Alpha Pos System
 function AlphaPos() {}
 AlphaPos.prototype.getCheckedValue = function (inputName) {
   let selectedOption = ''
