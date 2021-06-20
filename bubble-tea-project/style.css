@@ -1,0 +1,45 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://lh5.googleusercontent.com/kIXaOf_woyp9TMJp1HAq6zBj1r8qb5IEV0fUy9QVkQy07NMBDuzXauqAqFwgG2TKg0GuSbg5sEmJTfh0nhsUOHNTzENY6lrxAn06iYDhuOrz8ApAPF_yZTEVWcnO6jHjMjwQZ_W0') no-repeat center center;
+  background-size: cover;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 3px;
+}
+
+.row {
+  max-height: 600px;
+}
+
+.col-md-4 {
+  height: 580px;
+  overflow-y: auto;
+}
+
+[data-alpha-pos="delete-drink"] {
+  display: inline-block;
+  text-align: center;
+  color: #999;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+[data-alpha-pos="delete-drink"]:hover {
+  color: #333;
+}
+
+.menu .card:hover {
+  box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.8);
+}
+
+.menu .card-body {
+  cursor: pointer;
+}
